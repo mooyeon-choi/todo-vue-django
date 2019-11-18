@@ -45,7 +45,7 @@
       $ vue create {프로젝트 이름}
       ```
 
-   3. 프로젝트 폴더 구조
+3. 프로젝트 폴더 구조
 
       ```
       todo-django-vue/
@@ -62,3 +62,23 @@
       ```
 
       
+
+## 2. DRF 모델링
+
+## 3. Vue
+
+### Vue-router
+
+> about 페이지 / home 페이지로 이동하는 버튼이 생김
+>
+> 경로를 설정해줌
+
+```bash
+$ npm i vue-router
+$ vue add router
+> y
+> y
+```
+
+
+
