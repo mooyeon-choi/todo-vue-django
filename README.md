@@ -161,7 +161,52 @@ $ pip install djangorestframework-jwt
       $ npm i vue-session
       ```
 
-      
+   2. `src/main.js`
 
+      ```javascript
+      import VueSession from 'vue-session'
+      Vue.use(VueSession)
+      ```
 
+   3. `vue-session` 활용하여 저장
 
+      ```javascript
+      this.$session.start()
+      this.$session.set('jwt', token)
+      ```
+
+### 3) 활용
+
+1. 요청시마다 아래의 `options`을 포함하여 전송
+
+   ```javascript
+   this.$session.start()
+   const token = this.$session.get('jwt')
+   const options = {
+       headers: {
+           Authorization: `JWT ${token}` // JWT 뒤에 공백 필수!!
+       }
+   }
+   ```
+
+### 4) 사용자 정보 활용
+
+> 사용자 정보를 활용하고 싶다면, token을 디코딩하여 활용한다.
+
+1. 패키지 설치
+
+```bash
+$ npm i jwt-decode
+```
+
+2. 활용
+
+   ```javascript
+   import jwtDecode from 'jwt-decode'
+   this.$session.start()
+   const token = this.$session.get('jwt')
+   console.log(jwtDecode(token))
+   // {user_id: 1, username: "admin", exp: 1574217907, email: ""}
+   ```
+
+   
