@@ -217,3 +217,15 @@ $ npm i jwt-decode
 
 ## 8. 비로그인시 로그인 페이지로 이동
 
+
+
+
+
+
+
+## 따로
+
+* GET - 가지고 오는 것 : data X
+* POST - 등록/저장 : data O
+* PUT - 수정 : data O
+* DELETE - 삭제 : data X, 리소스(url) 삭제
